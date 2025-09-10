@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-04-23 16:52:07 by Eclipse SUMO GUI Version 1.22.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\ASHISH\Sumo\2345net.net.xml"/>
+        <route-files value="C:\Users\ASHISH\Sumo\updated_routes_with_charging_stops.rou.xml"/>
+        <additional-files value="C:\Users\ASHISH\Sumo\chargingStations_with_lanes.add.xml"/>
+    </input>
+
+    <output>
+        <battery-output value="C:\Users\ASHISH\Sumo\battery_output.xml"/>
+        <chargingstations-output value="C:\Users\ASHISH\Sumo\chargingstations.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="40000"/>
+    </time>
+
+</sumoConfiguration>
+-->
+
+<chargingstations-export>
+    <chargingStation id="station_0" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_1" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_2" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_3" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_4" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_5" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_6" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_7" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_8" totalEnergyCharged="0.00" chargingSteps="0"/>
+    <chargingStation id="station_9" totalEnergyCharged="0.00" chargingSteps="0"/>
+</chargingstations-export>
