@@ -1,8 +1,14 @@
 # SUMO EV Charging & Battery Simulation
 
-This repository contains scripts and input files to run SUMO-based electric vehicle (EV) simulations, analyze low-battery events, and generate charging-station placements for a road network.
+This project focuses on modelling and optimizing Electric Vehicle (EV) charging infrastructure for Surat city using microscopic traffic simulation. The workflow integrates transportation demand modelling, GIS analysis, clustering algorithms, and SUMO-based EV simulations to identify optimal charging station locations.
 
-The project supports experiments with EV routing, battery drain tracking, charger placement, and post-simulation analysis. The included scripts help you create SUMO configuration files, place chargers from geographic coordinates, run/scrape TraCI outputs, and produce visualizations for comparing scenarios.
+The main objective is to:
+
+- Analyze EV travel demand using Origin–Destination (OD) matrices.
+- Simulate EV battery behaviour in realistic traffic conditions.
+- Identify locations where EV batteries frequently drop below critical levels.
+- Apply clustering techniques to determine optimal charging station placement.
+- Validate charging infrastructure effectiveness through simulation.
 
 ---
 
