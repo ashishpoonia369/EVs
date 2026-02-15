@@ -48,7 +48,7 @@ Inputs include:
 
 - High-resolution landuse raster used for planning (GeoTIFF):
 
-`Images/landuse_surat_modified.tif`
+![Tazes with Land use Surat](Images/TAZ_land_use.jpeg)
 
 - Discharge — Optimized scenario:
 
