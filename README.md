@@ -34,35 +34,35 @@ The repository includes visual outputs in the `images/` folder. Below are the ma
 
 - Discharge — Optimized scenario:
 
-![Discharge — Optimized](images/Discharge_optimized.png)
+![Discharge — Optimized](Images/Discharge_optimized.png)
 
 - Discharge — Unoptimized scenario:
 
-![Discharge — Unoptimized](images/Discharge_unoptimized.png)
+![Discharge — Unoptimized](Images/Discharge_unoptimized.png)
 
 - Cluster of low-battery points — Optimized:
 
-![Cluster — Optimized](images/clustter_optimized.png)
+![Cluster — Optimized](Images/clustter_optimized.png)
 
 - Cluster of low-battery points — Unoptimized:
 
-![Cluster — Unoptimized](images/Clustter_unoptimized.png)
+![Cluster — Unoptimized](Images/Clustter_unoptimized.png)
 
 - Cluster load comparison — Optimized:
 
-![Cluster load — Optimized](images/clustter_load_optimized.png)
+![Cluster load — Optimized](Images/clustter_load_optimized.png)
 
 - Cluster load comparison — Unoptimized:
 
-![Cluster load — Unoptimized](images/clustter_load_unoptimized.png)
+![Cluster load — Unoptimized](Images/clustter_load_unoptimized.png)
 
 - Traffic Analysis Zones (TAZ) / landuse used in spatial analysis:
 
-![TAZ / Landuse](images/TAZes.png)
+![TAZ / Landuse](Images/TAZes.png)
 
 - High-resolution landuse raster used for planning (GeoTIFF):
 
-`images/landuse_surat_modified.tif`
+`Images/landuse_surat_modified.tif`
 
 ---
 
