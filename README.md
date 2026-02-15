@@ -77,84 +77,23 @@ Inputs include:
 
 
 
+---
+
+## Tools & Technologies
+
+- SUMO (Simulation of Urban Mobility)
+- Python
+- TraCI API
+- GeoPandas
+- QGIS
 
 ---
 
-## Files of interest
 
-- **Network & routes**
-  - `2345net.net.xml` — SUMO network in this folder.
-  - Route files: any `routes_*.rou.xml` files in the repo.
+## Key Insights
 
-- **Helper scripts**
-  - `create_sumo_config.py` — builds `simulation_with_charging.sumo.cfg` from `net`, `route`, and `additional` files.
-  - `place_chargers.py` — places chargers (lon/lat list) onto the network and writes `chargingStations_generated.add.xml`.
-  - `app.py` — connects to SUMO via TraCI and records vehicles with battery < 10% into `discharged_battries_optimized.csv`.
-
-- **Add/Output files**
-  - `battery_devices_*.add.xml` — battery/device definitions for vehicles.
-  - `chargingStations_generated.add.xml`, `chargingStations_location.xml` — charger definition files.
-  - `Discharged_EVs.xml`, `battery_output*.xml` — example outputs from SUMO.
+- Charging demand clusters align with dense travel corridors.
+- Optimized station placement reduces battery depletion risk.
+- Spatial clustering improves infrastructure efficiency.
 
 ---
-
-## Requirements / Prerequisites
-
-- SUMO (latest stable recommended) installed and on your PATH (`sumo` and `sumo-gui` accessible).
-- Python 3.8+.
-- Python packages (example):
-
-```bash
-pip install sumolib traci pandas lxml
-```
-
----
-
-## Typical workflow / usage
-
-1. Prepare or edit input files: network (`*.net.xml`), routes (`*.rou.xml`), device/add files.
-2. (Optional) Generate a config:
-
-```bash
-python create_sumo_config.py
-```
-
-3. (Optional) Generate charging stations from lon/lat:
-
-```bash
-python place_chargers.py
-```
-
-4. Run SUMO with the config:
-
-```bash
-sumo-gui -c simulation_with_charging.sumo.cfg
-# or headless:
-# sumo -c simulation_with_charging.sumo.cfg
-```
-
-5. Run `app.py` to record low-battery vehicles via TraCI:
-
-```bash
-python app.py
-```
-
-Output CSVs and PNGs will be written to the repository (see `images/` and `*.csv`).
-
----
-
-## Notes & troubleshooting
-
-- `app.py` expects the vehicle/device definitions to expose `device.battery.actualBatteryCapacity` and `device.battery.maximumBatteryCapacity` via TraCI.
-- `place_chargers.py` assumes the network uses lon/lat; convert coordinates if your net uses projected coords.
-- If `app.py` fails to start SUMO, verify the config filename inside `app.py` and ensure the file exists.
-
----
-
-## Next steps I can do for you
-
-- Update `app.py` to point to `simulation_with_charging.sumo.cfg` (or another config you pick).
-- Add a `requirements.txt` and a small CLI script to run the full pipeline.
-- Produce a short notebook that loads `discharged_battries_optimized.csv` and renders the figures shown in `images/`.
-
-If you want any of these, tell me which to do next.
