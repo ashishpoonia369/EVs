@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-02-13 07:14:53 by Eclipse SUMO GUI Version 1.22.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\ASHISH\Sumo\2345net.net.xml"/>
+        <route-files value="C:\Users\ASHISH\Sumo\routes_electric_1500.rou.xml"/>
+        <additional-files value="C:\Users\ASHISH\Sumo\battery_devices_1500_final1.add.xml"/>
+    </input>
+
+    <output>
+        <battery-output value="C:\Users\ASHISH\Sumo\Discharged_EVs.xml"/>
+    </output>
+
+</sumoConfiguration>
+-->
+
+<battery-export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/battery_file.xsd">
+</battery-export>

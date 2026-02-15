@@ -2,53 +2,53 @@ import traci
 import sumolib
 import csv
 
-# Define output CSV file
-output_file = "last_battery_positions.csv"
+output_file = "discharged_battries_optimized.csv"
 
-# Start SUMO
-sumoBinary = sumolib.checkBinary('sumo-gui')  # or 'sumo' for no GUI
-sumoCmd = [sumoBinary, "-c", "configuration.sumo.cfg", "--start"]
+sumoBinary = sumolib.checkBinary('sumo-gui')
+sumoCmd = [sumoBinary, "-c", "configuration_optmized.sumo.cfg", "--start"]
 traci.start(sumoCmd)
 
 low_battery_vehicles = []
+recorded_vehicles = set()
 
 while traci.simulation.getMinExpectedNumber() > 0:
     traci.simulationStep()
 
     for veh_id in traci.vehicle.getIDList():
         try:
-            actual = float(traci.vehicle.getParameter(veh_id, "device.battery.actualBatteryCapacity"))
-            maximum = float(traci.vehicle.getParameter(veh_id, "device.battery.maximumBatteryCapacity"))
+            actual = float(traci.vehicle.getParameter(
+                veh_id, "device.battery.actualBatteryCapacity"))
+            maximum = float(traci.vehicle.getParameter(
+                veh_id, "device.battery.maximumBatteryCapacity"))
 
-            if maximum > 0:
-                percentage = (actual / maximum) * 100
-            else:
-                percentage = 0
+            percentage = (actual / maximum) * 100 if maximum > 0 else 0
 
-            if percentage <= 10:  # Battery lower than 10%
+            if percentage < 10 and veh_id not in recorded_vehicles:
                 x, y = traci.vehicle.getPosition(veh_id)
 
-                print(f"⚡ Vehicle {veh_id} | Battery: {percentage:.2f}% | Position: ({x:.2f}, {y:.2f})")
+                # 🔥 Convert to latitude/longitude
+                lon, lat = traci.simulation.convertGeo(x, y)
+
+                print(f"⚡ Vehicle {veh_id} | Battery: {percentage:.2f}% | LatLon: ({lat:.6f}, {lon:.6f})")
 
                 low_battery_vehicles.append({
                     "vehicle_id": veh_id,
                     "battery_percentage": percentage,
-                    "x_position": x,
-                    "y_position": y
+                    "longitude": lon,
+                    "latitude": lat
                 })
+                recorded_vehicles.add(veh_id)
 
         except traci.TraCIException:
-            pass  # ignore vehicles without battery
+            pass
 
 traci.close()
 
-# Save to CSV
 with open(output_file, mode="w", newline="") as csv_file:
-    fieldnames = ["vehicle_id", "battery_percentage", "x_position", "y_position"]
+    fieldnames = ["vehicle_id", "battery_percentage", "longitude", "latitude"]
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
     writer.writeheader()
-    for entry in low_battery_vehicles:
-        writer.writerow(entry)
+    writer.writerows(low_battery_vehicles)
 
-print(f"\n✅ Low battery vehicle positions saved to: {output_file}")
+print(f"\n✅ Saved: {output_file}")

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<additional>
+  <chargingStation id="station_1" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+  <chargingStation id="station_2" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+  <chargingStation id="station_3" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+  <chargingStation id="station_4" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+  <chargingStation id="station_5" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+  <chargingStation id="station_6" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+  <chargingStation id="station_7" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+  <chargingStation id="station_8" lane="--282#1_0" pos="0" connectors="2" power_kW="22"/>
+</additional>
