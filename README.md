@@ -34,9 +34,21 @@ This setup supports iterative experiments: change routes, adjust charger locatio
 
 ---
 
-## Results (figures)
+## Study Area
+The study focuses on Surat city, India
+Inputs include:
+  - Land-use dattaser
+  - TAZ boundaries
+  - Population and employement data
+  - Road network converter to SUMO formate
+### Example TAZ visualization:
 
-The repository includes visual outputs in the `images/` folder. Below are the main figures and short captions; open the images for full detail.
+  - Traffic Analysis Zones (TAZ) / landuse used in spatial analysis:
+  ![TAZ / Landuse](Images/TAZes.png)
+
+- High-resolution landuse raster used for planning (GeoTIFF):
+
+`Images/landuse_surat_modified.tif`
 
 - Discharge — Optimized scenario:
 
@@ -62,13 +74,9 @@ The repository includes visual outputs in the `images/` folder. Below are the ma
 
 ![Cluster load — Unoptimized](Images/clustter_load_unoptimized.png)
 
-- Traffic Analysis Zones (TAZ) / landuse used in spatial analysis:
 
-![TAZ / Landuse](Images/TAZes.png)
 
-- High-resolution landuse raster used for planning (GeoTIFF):
 
-`Images/landuse_surat_modified.tif`
 
 ---
 
